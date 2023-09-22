@@ -139,9 +139,9 @@
         const buildUrl = "Build";
         const loaderUrl = buildUrl + "/WebAR.loader.js";
         const config = {
-            dataUrl: buildUrl + "/ba27deae69f094e41d2028e0a5bae0ce.data.br",
-            frameworkUrl: buildUrl + "/ece1556e8c49fe35a9ec1c1e6e50a609.js.br",
-            codeUrl: buildUrl + "/ee32a170d2c111a8a65847da93d78906.wasm.br",
+            dataUrl: buildUrl + "/WebAR.data.unityweb",
+            frameworkUrl: buildUrl + "/WebAR.framework.js.unityweb",
+            codeUrl: buildUrl + "/WebAR.wasm.unityweb",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
             productName: "face-tracking-3d-model",
@@ -150,8 +150,8 @@
             cacheControl: function (url) {
             // typically includes: .data, .bundle, .zpt
             if (url.match(/\.data/) || url.match(/\.bundle/) || url.match(/\.zpt/)) {
-             return "immutable";
-}
+             return "must-revalidate";
+            }
    
             if (url.match(/\.mp4/) || url.match(/\.custom/) || url.match(/\.zbin/)) {
                 return "immutable";
